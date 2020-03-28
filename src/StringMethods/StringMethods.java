@@ -32,13 +32,21 @@ public class StringMethods {
 
 	// Given Strings s1 and s2, return the longer String
 	public static String longerString(String s1, String s2) {
+		if(s1.length() > s2.length()) {
+			return s1;
+		} else if(s1.length() < s2.length()) {
+			return s2;
+		}
 		return null;
 	}
 
 	
 	// if String s contains the word "underscores", change all of the spaces to underscores
 	public static String formatSpaces(String s) {
-		return null;
+		if(s.contains("underscores")) {
+			s.replace(" ", "_");
+		}
+		return s;
 	}
 
 	
@@ -46,13 +54,23 @@ public class StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
+		
 		return null;
 	}
 	
 	
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
-		return 0;
+		int sum = 0;
+		char[] sArr = s.toCharArray();
+		for(int i = 0; i < sArr.length; i++) {
+			if(Character.isDigit(sArr[i])) {
+				String c = String.valueOf(sArr[i]);
+				int dig = Integer.parseInt(c);
+				sum += dig;
+			}
+		}
+		return sum;
 	}
 	
 	

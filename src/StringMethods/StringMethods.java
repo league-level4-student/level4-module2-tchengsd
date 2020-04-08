@@ -37,14 +37,14 @@ public class StringMethods {
 		} else if(s1.length() < s2.length()) {
 			return s2;
 		}
-		return null;
+		return "equal";
 	}
 
 	
 	// if String s contains the word "underscores", change all of the spaces to underscores
 	public static String formatSpaces(String s) {
 		if(s.contains("underscores")) {
-			s.replace(" ", "_");
+			s = s.replace(' ', '_');
 		}
 		return s;
 	}
@@ -54,8 +54,42 @@ public class StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
-		
-		return null;
+		String t1 = s1.trim();
+		String t2 = s2.trim();
+		String t3 = s3.trim();
+		String win = "";
+		char f1 = ' ';
+		char f2 = ' ';
+		char f3 = ' ';
+		char[] c1 = t1.toCharArray();
+		char[] c2 = t2.toCharArray();
+		char[] c3 = t3.toCharArray();
+		for(int i = 0; i < c1.length; i++) {
+			if(c1[i] == ' ') {
+				f1 = c1[i+1];
+			}
+		}
+		for(int i = 0; i < c2.length; i++) {
+			if(c2[i] == ' ') {
+				f2 = c2[i+1];
+			}
+		}
+		for(int i = 0; i < c2.length; i++) {
+			if(c3[i] == ' ') {
+				f3 = c3[i+1];
+			}
+		}
+		int v1 = Character.getNumericValue(f1);
+		int v2 = Character.getNumericValue(f2);
+		int v3 = Character.getNumericValue(f3);
+		if(v1 < v2 && v1 < v3) {
+			win = t1;
+		} else if(v2 < v1 && v2 < v3) {
+			win = t2;
+		} else if(v3 < v1 && v3 < v2) {
+			win = t3;
+		}
+		return win;
 	}
 	
 	
@@ -76,16 +110,19 @@ public class StringMethods {
 	
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
+		
 		return 0;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s
 	public static String encrypt(String s, char key) {
+		
 		return null;
 	}
 
 	// Call Utilities.decrypt to decrypt the cyphertext
 	public static String decrypt(String s, char key) {
+		
 		return null;
 	}
 

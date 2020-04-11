@@ -116,14 +116,14 @@ public class StringMethods {
 
 	// Call Utitilities.encrypt to encrypt String s
 	public static String encrypt(String s, char key) {
-		
-		return null;
+		String text = Utilities.encrypt(s.getBytes(),(byte) key);
+		return text;
 	}
 
 	// Call Utilities.decrypt to decrypt the cyphertext
 	public static String decrypt(String s, char key) {
-		
-		return null;
+		String text = Utilities.decrypt(s,(byte) key);
+		return text;
 	}
 
 
@@ -146,6 +146,7 @@ public class StringMethods {
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
+		
 		return true;
 	}
 	

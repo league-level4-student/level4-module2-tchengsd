@@ -110,8 +110,14 @@ public class StringMethods {
 	
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
-		
-		return 0;
+		int index = 0;
+		int count = 0;
+		while(index != -1) {
+			index = s.indexOf(substring, index);
+			count++;
+		}
+		count--;
+		return count;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s

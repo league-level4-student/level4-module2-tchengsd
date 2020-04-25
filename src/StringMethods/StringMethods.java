@@ -109,14 +109,21 @@ public class StringMethods {
 	
 	
 	// Return the number of times String substring appears in String s
+	/*
+	 * What this code needs to do:
+	 * Find the amount of times substring appears using indexOf()
+	 * Use the count variable to keep track of those amounts
+	 * Use a while loop so that the program stops calling indexOf() when there are no more instances of substring in s
+	 * Add 1 to count every time the loop runs
+	 * Return count
+	 */
 	public static int substringCount(String s, String substring) {
-		int index = 0;
+		int index = s.indexOf(substring);
 		int count = 0;
 		while(index != -1) {
-			index = s.indexOf(substring, index);
 			count++;
+			index = s.indexOf(substring, index + 1);
 		}
-		count--;
 		return count;
 	}
 
@@ -136,7 +143,14 @@ public class StringMethods {
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
-		return 0;
+		int words = 0;
+		String[] array = s.split(" ");
+		for(int i = 0; i < array.length; i++) {
+			if(array[i].endsWith(substring)) {
+				words++;
+			}
+		}
+		return words;
 	}
 	
 
@@ -144,7 +158,10 @@ public class StringMethods {
 	// of String substring and the final occurrence
 	// You can assume that substring will appear at least twice
 	public static int distance(String s, String substring) {
-		return 0;
+		int ind1 = s.indexOf(substring) + substring.length();
+		int ind2 = s.lastIndexOf(substring);
+		int dist = ind2 - ind1;
+		return dist;
 	}
 
 
